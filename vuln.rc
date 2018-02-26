@@ -1,0 +1,14 @@
+#!/bin/bash
+
+alias udc-vulnscan-list="echo 'cve exploitdb openvas osvdb scipvuldb securityfocus securitytracker vulscan xforce'"
+alias udc-vulnscan-scanflags='nmap -n -Pn -sV --randomize-hosts --scanflags ACKPSH --script=vulscan/vulscan.nse'
+alias udc-vulnscan-sC='nmap -n -Pn -sV -sC --randomize-hosts --script=vulscan/$1'
+alias udc-vulnscan-firewalk='nmap -n -Pn -sV --randomize-hosts --script=firewalk --traceroute --script=vulscan/vulscan.nse'
+alias udc-vulnscan-datalength='nmap -n -Pn -sV --data-length 15 --randomize-hosts -D RND:5 -f --script=vulscan/vulscan.nse'
+alias udc-vulners-scanflags='nmap -n -Pn -sV --randomzie-hosts --scanflags ACKPSH --script vulners'
+alias udc-vulners-sC='nmap -n -Pn -sV -sC --randomize-hosts --script vulners'
+alias udc-vulners-firewalk='nmap -n -Pn -sV --randomize-hosts --script=firewalk --traceroute --script vulners'
+alias udc-vulners-datalength='nmap -n -Pn -sV --data-length 15 --randomize-hosts -D RND:5 -f --script vulners'
+alias udc-scada="echo 'Siemens-CommunicationsProcessors.nse:80 Siemens-SCALANCE-module.nse:u:161 Siemens-WINCC.nse:u:137'"
+
+#- EOF -#

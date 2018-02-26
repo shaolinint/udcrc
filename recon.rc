@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#- recon 
+alias udc-recon-aquatone-scan='aquatone-scan --domain'
+alias udc-recon-aquatone-gather='aquatone-gather --domain'
+
+#- port scanning
+SAPPORT='80,443,3200-3299,3300-3399,8000-8099,8100-8199,50000-59913'
+alias udc-pscan-nmap-bypass-scanflags='nmap -n -Pn -sV --randomize-hosts --scanflags ACKPSH'
+alias udc-pscan-nmap-bypass-sC='nmap -n -Pn -sV -sC --randomize-hosts'
+alias udc-pscan-nmap-bypass-firewalk='nmap -n --randomize-hosts --script=firewalk --traceroute'
+alias udc-pscan-nmap-bypass-datalenght='nmap -n -Pn -sV --data-length 15 --randomize-hosts -D RND:5 -f'
+alias udc-pscan-nmap-bypass-zomebi='nmap -n -Pn -sV -sI $1'
+alias udc-pscan-nmap-zombie-locate-ext='nmap -n -sS -iR 1000 -T5 -v -oN /hacklabs/pentest/tmp/nmap-zombie-garbage.nmap --script ipidseq --script-args probe-port=53,80,443,8080,8081,8443 -g 80 -p 20-25,80,135-139,443,8080,8443,8181,8081 --script path-mtu'
+alias udc-pscan-nmap-zombie-locate-int='nmap -n -sS -T5 -v -oN /hacklabs/pentest/tmp/nmap-zombie-garbage.nmap --script ipidseq --script-args probe-port=53,80,443,8080,8443,8081 -g 80 -p 20-25,80,135-139,443,445,8080,8081,8181,8443 --script path-mtu'
+alias udc-pscan-nmap-sap-portlist='echo $SAPPORT'
+alias udc-pscan-hping-bypass='hping3 -c 100 -p ++1'
+alias udc-pscan-ipless='python /hacklabs/pentest/evasion/ipless/ipless-scan.py'
+
+#- EOF -#
